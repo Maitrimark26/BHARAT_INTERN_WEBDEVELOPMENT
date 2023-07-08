@@ -1,0 +1,60 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="main">
+   <header><h2>Temperature Converter </h2></header>
+   <div class="body">
+    <label for="">Enter Temperature
+        <input type="text" placeholder="Enter Temperature" id="temp" >
+    </label>
+    <br><br><br><br>
+    <label for="">From: <select id="from">
+        <option value="Degree Celcius" id="one">Degree Celcius</option>
+        <option value="Fahrenheit" id="two">Fahrenheit</option>
+        
+    </select></label>
+    <br><br><br><br>
+    <label for="" >To: <select id="to">
+        <option value="Degree Celcius" id="four">Degree Celcius</option>
+        <option value="Fahrenheit" id="five">Fahrenheit</option>
+       
+    </select></label>
+    <br><br><br><br>
+    <button onclick="fun()" >Convert</button>
+    <div class="d"></div>
+   </div>
+</div>
+
+
+    <script >
+        function fun()
+{
+    var inp=parseFloat(document.getElementById("temp").value);
+    var cel1=document.getElementById("from")
+    cel3=cel1.value;
+    var d1=document.querySelector(".d")
+    var cel2=document.getElementById("to")
+    cel4=cel2.value;
+    if(cel3 === "Degree Celcius" && cel4 === "Fahrenheit")
+    {
+    var far=( inp*(9/5) ) +32;
+    d1.innerHTML="Final Temperature is "+ far+" F";
+    }
+    
+    else if(cel3 === "Fahrenheit" && cel4 === "Degree Celcius")
+    {
+    var cal=(inp -32)*(5/9)
+    d1.innerHTML="Final Temperature is "+ cal+" C";
+    }
+}
+
+    </script>
+</body>
+</html> 
+
